@@ -1,0 +1,8 @@
+export {default as LogoSolana} from './logo-solana.png'
+export {default as LogoCompany} from './logo-company.png'
+export {default as LogoTelegram} from './logo-telegram.png'
+export {default as Planet} from './planet.png'
+export {default as Comet} from './comet.png'
+export {default as ShapeBlue} from './shape-blue.png'
+export {default as ShapeRed} from './shape-red.png'
+export {default as TwitterX} from './twitter-x.png'

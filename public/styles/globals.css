@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --fw-semi: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --gradient-bg: linear-gradient(106.2deg, rgba(150, 52, 136, 0.2) -12.33%, rgba(252, 111, 50, 0.2) 50.28%, rgba(255, 74, 89, 0.2) 114.17%);
+  --gradient-br: linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%);
+}
+
+@layer base {
+  body {
+    color: var(--color-white);
+    background: var(--color-black);
+
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .hero {
+    background-image: url("../assets/images/planet.png");
+    background-size: 700px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #B83E9B, #FA5459);
+    background-size: 300% 300%;
+    background-clip: text;
+  }
+
+  h1 {
+    font-size: 128px;
+    line-height: 158px;
+    font-weight: var(--fw-medium);
+  }
+
+  h2 {
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: var(--fw-medium);
+  }
+
+  h3 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: var(--fw-medium);
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: var(--fw-regular);
+  }
+
+  .borderGradient::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 999px;
+    background-color: var(--color-black);
+    z-index: -1;
+    transition: 200ms
+  }
+
+  .borderGradient:hover::before {
+    opacity: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .comet {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(-45deg, #FFF, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px #FFF);
+  }
+
+  .comet::before,
+  .comet::after {
+    content: "";
+    position: absolute;
+    /*top: calc(50%-1px);*/
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #FFF, rgba(0, 0, 255, 0));
+    border-radius: 100%;
+    transform: translateX(50%) rotateZ(45deg);
+    animation: shining 3s ease-in-out infinite
+  }
+
+  .comet::after {
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+
+  .comet:nth-child(1) {
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    animation-delay: 1s;
+  }
+
+  .comet:nth-child(1)::before,
+  .comet:nth-child(1)::after {
+    animation-delay: 1s;
+  }
+
+  .comet:nth-child(2) {
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+    animation-delay: 1.2s;
+  }
+
+  .comet:nth-child(2)::before,
+  .comet:nth-child(2)::after {
+    animation-delay: 1.2s;
+  }
+
+  .comet:nth-child(3) {
+    top: calc(50% - 0px);
+    left: calc(50% - 150px);
+    animation-delay: 1.4s;
+  }
+
+  .comet:nth-child(3)::before,
+  .comet:nth-child(3)::after {
+    animation-delay: 1.4s;
+  }
+
+  .comet:nth-child(4) {
+    top: calc(50% - -50px);
+    left: calc(50% - 200px);
+    animation-delay: 1.6s;
+  }
+
+  .comet:nth-child(4)::before,
+  .comet:nth-child(4)::after {
+    animation-delay: 1.6s;
+  }
+
+  .comet:nth-child(5) {
+    top: calc(50% - -100px);
+    left: calc(50% - 250px);
+    animation-delay: 1.8s;
+  }
+
+  .comet:nth-child(5)::before,
+  .comet:nth-child(5)::after {
+    animation-delay: 1.8s;
+  }
+
+  .customRotate50 {
+    rotate: 50deg;
+  }
+
+  .blackGradient {
+    width: 100%;
+    height: 700px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

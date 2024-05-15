@@ -1,0 +1,11 @@
+/cache
+.cache
+package.json
+package-lock.json
+public
+.yarn
+/dist
+/build
+node_modules
+.next
+*.md
